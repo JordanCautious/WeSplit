@@ -40,6 +40,7 @@ struct ContentView: View {
                     }
                 } header: {
                     Text("How much was the meal?")
+                        .foregroundColor(.blue)
                 }
                 
                 Section {
@@ -52,6 +53,7 @@ struct ContentView: View {
                 } header: {
                     Text("How much tip do you want to leave?")
                 }
+                .foregroundColor(.blue)
                 
                 Section {
                     Text(totalPerPerson, format:
