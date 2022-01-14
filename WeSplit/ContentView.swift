@@ -14,6 +14,11 @@ struct ContentView: View {
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
+    var totalamount: Double {
+        let tip = (checkAmount/100) * Double(tipPercentage)
+        return checkAmount + tip
+    }
+    
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
@@ -28,6 +33,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
+                // This code relates to the meal amount and number of people
                 Section {
                     TextField("Amount", value: $checkAmount, format:
                         .currency(code: Locale.current.currencyCode ?? "USD"))
@@ -40,9 +46,10 @@ struct ContentView: View {
                     }
                 } header: {
                     Text("How much was the meal?")
-                        .foregroundColor(.blue)
                 }
+                .foregroundColor(.blue)
                 
+                // This code relates to the tip percentage.
                 Section {
                     Picker("Tip Percentage", selection: $tipPercentage) {
                         ForEach(tipPercentages, id: \.self) {
@@ -55,15 +62,33 @@ struct ContentView: View {
                 }
                 .foregroundColor(.blue)
                 
+                // This code relates to the total amount of the meal.
+                Section {
+                    Text(totalamount, format:
+                                .currency(code:Locale.current.currencyCode ?? "USD"))
+                } header: {
+                    Text("Total Amount")
+                }
+                .foregroundColor(.blue)
+
+                // This code relates to the amount per person.
                 Section {
                     Text(totalPerPerson, format:
                                 .currency(code:Locale.current.currencyCode ?? "USD"))
+                } header: {
+                    Text("Amount per person")
                 }
+                .foregroundColor(.blue)
+
             }
-            .navigationTitle("WeSplit!")
+            .navigationTitle("WeSplit")
         }
     }
 }
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
