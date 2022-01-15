@@ -47,7 +47,6 @@ struct ContentView: View {
                 } header: {
                     Text("How much was the meal?")
                 }
-                .foregroundColor(.blue)
                 
                 // This code relates to the tip percentage.
                 Section {
@@ -69,8 +68,7 @@ struct ContentView: View {
                 } header: {
                     Text("Total Amount")
                 }
-                .foregroundColor(.blue)
-
+                
                 // This code relates to the amount per person.
                 Section {
                     Text(totalPerPerson, format:
@@ -78,8 +76,6 @@ struct ContentView: View {
                 } header: {
                     Text("Amount per person")
                 }
-                .foregroundColor(.blue)
-
             }
             .navigationTitle("WeSplit")
         }
