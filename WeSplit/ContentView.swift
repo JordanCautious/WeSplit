@@ -37,7 +37,7 @@ struct ContentView: View {
                 // This code relates to the meal amount and number of people
                 Section {
                     TextField("Amount", value: $checkAmount, format:
-                        .currency(code: Locale.current.currencyCode ?? "USD"))
+                                    .currency(code: Locale.current.currencyCode ?? "USD"))
                         .keyboardType(.decimalPad)
                     
                     Picker("Number of people?", selection: $numberOfPeople) {
