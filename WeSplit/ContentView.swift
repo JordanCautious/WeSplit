@@ -46,7 +46,7 @@ struct ContentView: View {
                         }
                     }
                 } header: {
-                    Text("How much was the meal?")                .foregroundColor(.teal)
+                    Text("Cost of Meal?")                .foregroundColor(.teal)
                 }
                 
                 // This code relates to the tip percentage.
@@ -58,7 +58,7 @@ struct ContentView: View {
                     }
                     .pickerStyle(.segmented)
                 } header: {
-                    Text("How much tip do you want to leave?")
+                    Text("Percentage Tip?")
                 }
                 .foregroundColor(.teal)
                 
@@ -92,5 +92,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
+        ContentView()
+            .preferredColorScheme(.light)
     }
 }
